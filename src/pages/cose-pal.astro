@@ -1,0 +1,94 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="Cos'è PAL — Persone al Lavoro"
+  description="Personeallavoro è una piattaforma per automatizzare processi HR, velocizzando e semplificando l'acquisizione e la consultazione dei dati relativi al tuo personale."
+>
+  <Header />
+
+  <main class="max-w-4xl mx-auto px-4 pt-28 mb-16">
+
+    <!-- Intro -->
+    <section class="mb-16 border-b border-gray-100">
+      <h1 class="text-4xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">Cos'è PAL</h1>
+      <p class="text-lg text-gray-500 mb-8">La piattaforma che semplifica la gestione del personale.</p>
+      <img
+        alt="Ingegnere in cantiere con tablet"
+        src={`${base}images/cose-pal/hero.jpg`}
+        class="w-full rounded-xl aspect-video object-cover mb-8"
+      />
+      <p class="text-lg text-gray-600 leading-relaxed">
+        Personeallavoro è una piattaforma per automatizzare processi HR, velocizzando e semplificando l'acquisizione e la consultazione dei dati relativi al tuo personale.
+      </p>
+    </section>
+
+    <!-- Un nuovo modo -->
+    <section class="mb-16 border-b border-gray-100">
+      <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">
+        Un nuovo modo di gestire il personale
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed mb-8">
+        Un nuovo modo di gestire il personale per aziende da 1 a oltre 1000 dipendenti.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img
+          alt="Gestione HR"
+          src={`${base}images/cose-pal/gestione-hr.jpg`}
+          class="w-full rounded-xl object-cover aspect-4/3"
+        />
+        <img
+          alt="Dati in cloud"
+          src={`${base}images/cose-pal/cloud.jpg`}
+          class="w-full rounded-xl object-cover aspect-4/3"
+        />
+      </div>
+    </section>
+
+    <!-- Cloud -->
+    <section class="mb-16 border-b border-gray-100">
+      <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">
+        Tutti i dati in cloud, sempre disponibili
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed mb-8">
+        Tutti i dati sono in cloud e possono essere consultati in tempo reale da qualunque luogo e da qualsiasi dispositivo connesso ad internet.
+      </p>
+      <img
+        alt="Team al lavoro"
+        src={`${base}images/cose-pal/team.jpg`}
+        class="w-full rounded-xl aspect-video object-cover"
+      />
+    </section>
+
+    <!-- Unica piattaforma -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">
+        Un'unica piattaforma per tutto
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        Gestisci le presenze, il controllo accessi, i corsi della sicurezza, le commesse e i DPI o attrezzature in carico ai tuoi dipendenti tutto da un'unica piattaforma.
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="mb-16">
+      <div class="rounded-xl bg-[#FF6600]/5 border border-[#FF6600]/20 p-8 sm:p-10 text-center">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Contattaci subito per avere una demo gratuita</h3>
+        <p class="text-gray-600 mb-6">Senza alcun impegno.</p>
+        <a
+          href={`${base}contatti/`}
+          class="inline-block rounded-xl bg-[#FF6600] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#e65c00] active:bg-[#cc5200] transition-colors"
+        >
+          Richiedi una demo
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

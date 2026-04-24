@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+}
+
+const base = import.meta.env.BASE_URL;
+
+const {
+	title = 'Persone al Lavoro — Gestione del personale',
+	description = 'Persone al Lavoro (PAL): piattaforma web per la gestione del personale, presenze, accessi in cantiere e formazione. By Lapsy S.r.l.',
+	image = `${base}ppl_logo.png`
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="it">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href={`${base}ppl_logo.png`} />
+		<link rel="icon" type="image/png" href={`${base}ppl_logo.png`} sizes="192x192" />
+		<link rel="apple-touch-icon" href={`${base}ppl_logo.png`} />
+		<meta name="msapplication-TileImage" content={`${base}ppl_logo.png`} />
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&display=swap" rel="stylesheet" />
+
+		<!-- SEO -->
+		<link rel="canonical" href={canonicalURL} />
+		<meta name="description" content={description} />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.site)} />
+		<meta property="og:locale" content="it_IT" />
+		<meta property="og:site_name" content="Persone al Lavoro" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={new URL(image, Astro.site)} />
+	</head>
+	<body class="min-h-screen bg-white text-gray-900 antialiased font-[Inter,sans-serif]">
+		<slot />
+	</body>
+</html>

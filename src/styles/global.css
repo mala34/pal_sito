@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Button style for links inside prose (blog posts) */
+.prose a[style*="background:#FF6600"]:hover {
+  background: #e65c00 !important;
+}

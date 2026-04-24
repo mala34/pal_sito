@@ -1,0 +1,43 @@
+local_backend: true
+publish_mode: editorial_workflow
+
+backend:
+  name: github
+  repo: mala34/personeallavoro
+  branch: main
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  - name: notizie
+    label: Notizie / Blog
+    folder: src/content/posts
+    create: true
+    slug: "{{slug}}"
+    filter:
+      field: tipo
+      value: notizia
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Tipo", name: "tipo", widget: "hidden", default: "notizia" }
+      - label: "Categoria"
+        name: "categoria"
+        widget: "select"
+        options:
+          - { label: "Aggiornamenti Prodotto", value: "prodotto" }
+          - { label: "Nuove Funzionalità", value: "funzionalita" }
+          - { label: "Badge di Cantiere", value: "cantiere" }
+          - { label: "Intelligenza Artificiale", value: "ai" }
+          - { label: "Sicurezza sul Lavoro", value: "sicurezza" }
+          - { label: "News", value: "news" }
+      - { label: "Data", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Ordine", name: "ordine", widget: "number", required: false, hint: "Numero per ordinare i contenuti (1 = primo). Se vuoto, ordina per data." }
+      - { label: "Immagine", name: "image", widget: "image", required: false }
+      - { label: "Descrizione", name: "description", widget: "text", required: false }
+      - { label: "Contenuto", name: "body", widget: "markdown" }

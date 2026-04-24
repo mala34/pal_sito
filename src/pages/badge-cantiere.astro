@@ -1,0 +1,180 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="Badge di cantiere — Persone al Lavoro"
+  description="Il nuovo Badge Digitale di Cantiere trasforma la sicurezza in un diritto concreto. Grazie alla tecnologia PAL, ogni presenza è tracciata, ogni lavoratore è tutelato."
+>
+  <Header />
+
+  <main class="max-w-4xl mx-auto px-4 pt-28 mb-16">
+
+    <!-- Intro -->
+    <section class="mb-16 border-b border-gray-100">
+      <h1 class="text-4xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">Badge di cantiere</h1>
+      <p class="text-lg text-gray-500 mb-8">La sicurezza entra in cantiere solo con un badge!</p>
+      <img
+        alt="Badge digitale PAL"
+        src={`${base}images/badge/badge-screen.png`}
+        class="w-full rounded-xl object-cover mb-8"
+      />
+      <p class="text-lg text-gray-600 leading-relaxed">
+        Il nuovo Badge Digitale di Cantiere trasforma la sicurezza in un diritto concreto. Grazie alla tecnologia PAL, ogni presenza è tracciata, ogni lavoratore è tutelato, ogni impresa è più trasparente.
+      </p>
+    </section>
+
+    <!-- Il badge identifica + Stop a carte -->
+    <section class="mb-16 border-b border-gray-100">
+      <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">
+        Il badge identifica, <span class="text-[#FF6600]">PAL fa il resto</span>
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed mb-8">
+        Il lavoratore accede al cantiere tramite un badge personale con codice. PAL collega i dati alla piattaforma gestionale e tiene tutto sotto controllo: formazione, regolarità, DPI e documenti di sicurezza.
+      </p>
+
+      <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900 mb-1">
+        Stop a carte, errori e <span class="text-[#FF6600]">perdita di tempo</span>
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed mb-8 mt-4">
+        Il responsabile consulta in tempo reale la situazione del cantiere: chi è presente, chi è abilitato, chi ha scadenze in arrivo. Niente più fogli, firme o tesserini cartacei.
+      </p>
+      <img
+        alt="Dashboard badge cantiere"
+        src={`${base}images/badge/badge-dashboard.png`}
+        class="w-full rounded-xl object-cover"
+      />
+    </section>
+
+    <!-- 6 vantaggi -->
+    <section class="mb-16 border-b border-gray-100">
+      <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900 mb-8">
+        I vantaggi del badge PAL
+      </h2>
+      <dl class="grid grid-cols-1 gap-8 text-base/7 text-gray-600 sm:grid-cols-2">
+        <div class="relative pl-9">
+          <dt class="inline font-semibold text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-[#FF6600]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 3.75 9.375v-4.5ZM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 0 1-1.125-1.125v-4.5ZM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 13.5 9.375v-4.5Z" />
+            </svg>
+            Tracciabilità immediata.
+          </dt>{" "}
+          <dd class="inline">Ogni ingresso in cantiere è registrato con precisione, grazie al badge digitale dotato di QR Code e tecnologia NFC. Nessuna presenza sfugge, tutto è verificabile in tempo reale.</dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="inline font-semibold text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-[#FF6600]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+            </svg>
+            Sicurezza sotto controllo.
+          </dt>{" "}
+          <dd class="inline">Il sistema monitora lavoratori, mezzi e imprese presenti. I responsabili possono consultare la situazione da remoto e intervenire subito in caso di irregolarità.</dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="inline font-semibold text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-[#FF6600]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+            </svg>
+            Zero burocrazia.
+          </dt>{" "}
+          <dd class="inline">Addio a registri, firme e fogli cartacei. Tutti i dati sono archiviati in digitale e aggiornati automaticamente dal sistema PAL.</dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="inline font-semibold text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-[#FF6600]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+            </svg>
+            Conformità automatica.
+          </dt>{" "}
+          <dd class="inline">Formazione, DPI, visite mediche e documenti sempre sotto controllo. Il badge segnala scadenze e avvisi per mantenere tutto in regola con il Decreto Sicurezza 2025.</dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="inline font-semibold text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-[#FF6600]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+            </svg>
+            Premia la trasparenza.
+          </dt>{" "}
+          <dd class="inline">Le aziende che adottano il sistema dimostrano attenzione alla sicurezza e possono accedere a bonus e incentivi INAIL. Un vantaggio concreto per chi lavora nel rispetto delle regole.</dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="inline font-semibold text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-[#FF6600]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
+            </svg>
+            Facile da usare.
+          </dt>{" "}
+          <dd class="inline">L'interfaccia intuitiva rende il sistema accessibile anche a chi non è pratico di tecnologia.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Form demo -->
+    <section>
+      <div class="rounded-xl p-8 sm:p-10">
+        <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900 mb-8 text-center">Richiedi subito una demo</h2>
+        <form id="badge-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-5 max-w-xl mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="badge-nome" class="block text-sm font-medium text-gray-900 mb-1">Nome <span class="text-red-400">*</span></label>
+              <input type="text" id="badge-nome" name="nome" required class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-[#FF6600] focus:ring-1 focus:ring-[#FF6600] transition-colors" />
+            </div>
+            <div>
+              <label for="badge-cognome" class="block text-sm font-medium text-gray-900 mb-1">Cognome <span class="text-red-400">*</span></label>
+              <input type="text" id="badge-cognome" name="cognome" required class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-[#FF6600] focus:ring-1 focus:ring-[#FF6600] transition-colors" />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="badge-email" class="block text-sm font-medium text-gray-900 mb-1">Mail <span class="text-red-400">*</span></label>
+              <input type="email" id="badge-email" name="email" required class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-[#FF6600] focus:ring-1 focus:ring-[#FF6600] transition-colors" />
+            </div>
+            <div>
+              <label for="badge-telefono" class="block text-sm font-medium text-gray-900 mb-1">Numero di Telefono <span class="text-red-400">*</span></label>
+              <input type="tel" id="badge-telefono" name="telefono" required class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-[#FF6600] focus:ring-1 focus:ring-[#FF6600] transition-colors" />
+            </div>
+          </div>
+          <div>
+            <label for="badge-societa" class="block text-sm font-medium text-gray-900 mb-1">Società <span class="text-red-400">*</span></label>
+            <input type="text" id="badge-societa" name="societa" required class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-[#FF6600] focus:ring-1 focus:ring-[#FF6600] transition-colors" />
+          </div>
+          <div>
+            <label for="badge-messaggio" class="block text-sm font-medium text-gray-900 mb-1">Messaggio <span class="text-red-400">*</span></label>
+            <textarea id="badge-messaggio" name="messaggio" rows="4" required class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-[#FF6600] focus:ring-1 focus:ring-[#FF6600] transition-colors resize-vertical"></textarea>
+          </div>
+          <div class="flex items-start gap-3">
+            <input type="checkbox" id="badge-privacy" name="privacy" required class="mt-1 size-4 rounded border-gray-300 text-[#FF6600] focus:ring-[#FF6600]" />
+            <label for="badge-privacy" class="text-sm text-gray-500">
+              Ho letto e accetto i <a href={`${base}privacy/`} class="text-[#FF6600] font-medium hover:underline">termini e le condizioni</a>. <span class="text-red-400">*</span>
+            </label>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="inline-block rounded-xl bg-[#FF6600] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#e65c00] active:bg-[#cc5200] transition-colors cursor-pointer">
+              Invia richiesta
+            </button>
+          </div>
+        </form>
+        <div id="badge-form-success" class="hidden mt-6 p-4 bg-orange-50 border border-orange-200 rounded-xl text-orange-700 text-sm font-medium text-center">
+          Richiesta inviata con successo! Ti contatteremo al più presto.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  const form = document.getElementById("badge-form") as HTMLFormElement;
+  const success = document.getElementById("badge-form-success");
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    form.classList.add("hidden");
+    success?.classList.remove("hidden");
+  });
+</script>

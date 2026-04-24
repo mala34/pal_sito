@@ -1,0 +1,82 @@
+---
+import { formatDate } from "../../lib/posts";
+import { getCategoriaLabel } from "../../lib/categories";
+
+interface Props {
+  title: string;
+  slug: string;
+  tipo: "notizia" | "corso" | "fgas" | "rentri";
+  categoria: string;
+  date: Date;
+  description?: string;
+  image?: string;
+  luogo?: string;
+  durata?: string;
+}
+
+const { title, slug, tipo, categoria, date, description, image, luogo, durata } = Astro.props;
+const hrefMap: Record<string, string> = {
+  notizia: `/notizie/${slug}/`,
+  corso: `/corsi/${slug}/`,
+  fgas: `/fgas/${slug}/`,
+  rentri: `/rentri/${slug}/`,
+};
+const href = hrefMap[tipo] ?? `/notizie/${slug}/`;
+---
+
+<article data-post-card data-categoria={categoria} class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-200">
+  {image && (
+    <a href={href} class="block overflow-hidden">
+      <img
+        src={image}
+        alt={title}
+        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+        loading="lazy"
+      />
+    </a>
+  )}
+  <div class="p-5">
+    <div class="flex items-center gap-2 mb-3">
+      <span class={`inline-block px-2.5 py-0.5 text-xs font-medium rounded-full ${
+        tipo === "corso" ? "bg-emerald-50 text-emerald-700"
+        : tipo === "fgas" ? "bg-blue-50 text-blue-700"
+        : tipo === "rentri" ? "bg-amber-50 text-amber-700"
+        : "bg-slate-100 text-slate-600"
+      }`}>
+        {tipo === "corso" ? "Corso" : tipo === "fgas" ? "FGAS" : tipo === "rentri" ? "RENTRI" : "Notizia"}
+      </span>
+      <span class="inline-block px-2.5 py-0.5 text-xs font-medium rounded-full bg-gray-100 text-gray-600">
+        {getCategoriaLabel(categoria)}
+      </span>
+    </div>
+    <h3 class="text-lg font-bold text-gray-800 mb-2 leading-snug">
+      <a href={href} class="hover:text-[#7cc68d] transition-colors">
+        {title}
+      </a>
+    </h3>
+    {description && (
+      <p class="text-sm text-gray-500 mb-3 line-clamp-2">{description}</p>
+    )}
+    <div class="flex items-center gap-3 text-xs text-gray-400">
+      <time datetime={date.toISOString()}>
+        {formatDate(date)}
+      </time>
+      {luogo && (
+        <span class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3">
+            <path fill-rule="evenodd" d="m7.539 14.841.003.003.002.002a.755.755 0 0 0 .912 0l.002-.002.003-.003.012-.009a5.57 5.57 0 0 0 .19-.153 15.588 15.588 0 0 0 2.046-2.082c1.101-1.362 2.291-3.342 2.291-5.597A5 5 0 0 0 3 7c0 2.255 1.19 4.235 2.291 5.597a15.591 15.591 0 0 0 2.236 2.235l.012.01ZM8 8.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" clip-rule="evenodd" />
+          </svg>
+          {luogo}
+        </span>
+      )}
+      {durata && (
+        <span class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8Zm7.75-4.25a.75.75 0 0 0-1.5 0V8c0 .414.336.75.75.75h3.25a.75.75 0 0 0 0-1.5h-2.5v-3.5Z" clip-rule="evenodd" />
+          </svg>
+          {durata}
+        </span>
+      )}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,153 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="Sicurezza Artificiale — Persone al Lavoro"
+  description="SICUREZZA ARTIFICIALE offre un innovativo sistema di gestione della sicurezza basato sull'AI per il settore edile italiano. Monitoraggio intelligente del posto di lavoro."
+>
+  <Header />
+
+  <main class="max-w-4xl mx-auto px-4 pt-28 mb-16">
+
+    <!-- Intro -->
+    <section class="mb-16 border-b border-gray-100">
+      <h1 class="text-4xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">Sicurezza Artificiale</h1>
+      <p class="text-lg text-gray-500 mb-8">Un innovativo sistema di gestione della sicurezza basato sull'AI.</p>
+      <img
+        alt="Sicurezza Artificiale in cantiere"
+        src={`${base}images/sicurezza-ia/sicurezza-ai.jpg`}
+        class="w-full rounded-xl aspect-video object-cover mb-8"
+      />
+      <p class="text-lg text-gray-600 leading-relaxed mb-8">
+        SICUREZZA ARTIFICIALE offre un innovativo sistema di gestione della sicurezza basato sull'AI per il settore edile italiano. Il nostro servizio affianca il tuo addetto della sicurezza sul posto di lavoro offrendogli un sistema di monitoraggio anche quando non è presente in cantiere.
+      </p>
+    </section>
+
+    <!-- Che cos'è S.A. -->
+    <section class="mb-16 border-b border-gray-100">
+      <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">
+        Che cos'è <span class="text-[#FF6600]">S.A.</span>
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed mb-8">
+        "SICUREZZA ARTIFICIALE" elabora le immagini ricevute dal posto di lavoro e identifica i potenziali rischi notificandoli via mail al responsabile della sicurezza.
+      </p>
+      <img
+        alt="Logo Sicurezza Artificiale"
+        src={`${base}images/sicurezza-ia/LOGO-SICUREZZA-AI.png`}
+        class="max-w-md mx-auto object-contain mb-8"
+      />
+    </section>
+
+    <!-- Funzionalità -->
+    <section class="mb-16 border-b border-gray-100">
+      <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">
+        Funzionalità
+      </h2>
+      <ul class="text-lg text-gray-600 leading-relaxed mb-8 space-y-3">
+        <li class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5 text-[#FF6600] mt-1 shrink-0">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+          </svg>
+          Acquisizione delle immagini da smartphone
+        </li>
+        <li class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5 text-[#FF6600] mt-1 shrink-0">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+          </svg>
+          Riconoscimento visivo avanzato
+        </li>
+        <li class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5 text-[#FF6600] mt-1 shrink-0">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+          </svg>
+          Analisi intelligente conformità normativa
+        </li>
+        <li class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5 text-[#FF6600] mt-1 shrink-0">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+          </svg>
+          Esito analisi via mail
+        </li>
+        <li class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5 text-[#FF6600] mt-1 shrink-0">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+          </svg>
+          Dashboard di monitoraggio on-line
+        </li>
+        <li class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5 text-[#FF6600] mt-1 shrink-0">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+          </svg>
+          Supporto multi-dispositivo ottimizzato
+        </li>
+      </ul>
+    </section>
+
+    <!-- Prevenzione -->
+    <section class="mb-16 border-b border-gray-100">
+      <p class="text-lg text-gray-600 leading-relaxed mb-8">
+        Grazie ad avvisi e report immediati, gli addetti alla sicurezza possono reagire rapidamente ai pericoli per <strong class="text-gray-900">prevenire gli incidenti prima che accadano</strong>.
+      </p>
+    </section>
+
+    <!-- Vantaggi -->
+    <section class="mb-16 border-b border-gray-100">
+      <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900 mb-8">
+        I vantaggi di Sicurezza Artificiale
+      </h2>
+      <dl class="grid grid-cols-1 gap-8 text-base/7 text-gray-600 sm:grid-cols-3 mb-8">
+        <div class="text-center">
+          <div class="flex items-center justify-center size-14 mx-auto mb-4 rounded-xl bg-[#FF6600]/10">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7 text-[#FF6600]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+          </div>
+          <dt class="font-semibold text-gray-900 mb-2">Evita perdite di tempo</dt>
+          <dd>Consenti ai responsabili della sicurezza di utilizzare il loro tempo in modo più efficiente.</dd>
+        </div>
+        <div class="text-center">
+          <div class="flex items-center justify-center size-14 mx-auto mb-4 rounded-xl bg-[#FF6600]/10">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7 text-[#FF6600]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+          </div>
+          <dt class="font-semibold text-gray-900 mb-2">Risparmio denaro</dt>
+          <dd>Basta uno smartphone per verificare la sicurezza sul posto di lavoro, nessuna installazione di apparecchiature hardware.</dd>
+        </div>
+        <div class="text-center">
+          <div class="flex items-center justify-center size-14 mx-auto mb-4 rounded-xl bg-[#FF6600]/10">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="size-7 text-[#FF6600]">
+              <g fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+                <path d="M64,109.3c19.5,0,39.1-3.3,57.7-9.8l1.3-0.5V86.1l-7-2v-8.5c0-20-11.5-38.2-29.5-46.9v-2.1c0-3.9-3.1-7-7-7H66v-4h-4v4H48.5c-3.9,0-7,3.1-7,7v2.1C23.5,37.4,12,55.7,12,75.6v8.5l-7,2v12.9l1.3,0.5C24.9,106.1,44.5,109.3,64,109.3z M9,89.2l7-2V75.6c0-17.8,9.9-34.1,25.5-42.4v18.4h4v-25c0-1.7,1.3-3,3-3H62v42h4v-42h13.5c1.7,0,3,1.3,3,3v25h4V33.2c15.6,8.3,25.5,24.6,25.5,42.4v11.5l7,2v7.1c-35.5,12.1-74.5,12.1-110,0V89.2z" />
+                <rect height="4" width="70" x="29" y="83.6" />
+              </g>
+            </svg>
+          </div>
+          <dt class="font-semibold text-gray-900 mb-2">Aumenta la sicurezza</dt>
+          <dd>Cambia il tuo approccio alla sicurezza da reattivo a proattivo.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- CTA -->
+    <section class="mb-16">
+      <div class="rounded-xl bg-[#FF6600]/5 border border-[#FF6600]/20 p-8 sm:p-10 text-center">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Scrivici subito per avere una prova gratuita!</h3>
+        <p class="text-gray-600 mb-6">Scopri come l'AI può migliorare la sicurezza nel tuo cantiere.</p>
+        <a
+          href={`${base}contatti/`}
+          class="inline-block rounded-xl bg-[#FF6600] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#e65c00] active:bg-[#cc5200] transition-colors"
+        >
+          Contattaci
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

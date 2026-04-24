@@ -1,0 +1,262 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const base = import.meta.env.BASE_URL;
+
+interface Feature {
+  title: string;
+  description: string;
+}
+
+interface FeatureSection {
+  category: string;
+  icon: string;
+  features: Feature[];
+}
+
+const sections: FeatureSection[] = [
+  {
+    category: "Gestione Presenze",
+    icon: "/images/funzionalita/ORARI.png",
+    features: [
+      {
+        title: "Rilevazione delle presenze",
+        description:
+          "Il dipendente può timbrare la presenza da marcatempo, da App o dal PC. I dati sono visibili in tempo reale e il sistema verifica che siano conformi al profilo del dipendente, se ci sono anomalie, puoi correggere con i giustificativi.",
+      },
+      {
+        title: "Gestione turni di lavoro",
+        description:
+          "Pianifica e gestisci i turni in modo semplice e rapido, grazie alla tabella con visualizzazione giornaliera e settimanale e all'inserimento intuitivo.",
+      },
+      {
+        title: "Gestione ferie e permessi",
+        description:
+          "Grazie al registro presenze sempre aggiornato, potrai monitorare facilmente anche tutta la sezione ferie, permessi e banca ore, evitando così spiacevoli inconvenienti.",
+      },
+      {
+        title: "Ottimizzazione dei tempi",
+        description:
+          "In un'unica piattaforma hai tutto ciò che ti serve per gestire al meglio le tue risorse umane, con la massima sicurezza dei dati e con un'interfaccia semplice e intuitiva.",
+      },
+    ],
+  },
+  {
+    category: "Gestione Commesse e Cantieri",
+    icon: "/images/funzionalita/RUSPA.png",
+    features: [
+      {
+        title: "Accesso controllato",
+        description:
+          "Controlla l'ingresso e la presenza in azienda o in cantiere. Verifica in tempo reale la validità dei requisiti del personale presente. Il capo cantiere può creare permessi temporanei per accessi occasionali.",
+      },
+      {
+        title: "Rilevazione geolocalizzata",
+        description:
+          "Il dipendente timbra da App con la geolocalizzazione, il responsabile di cantiere riceve i dati in tempo reale e le ore vengono automaticamente imputate alla commessa/cliente.",
+      },
+      {
+        title: "Gestione Commesse e fasi di lavoro",
+        description:
+          "Tutte le attività di persone e mezzi saranno monitorate e automaticamente imputate alla commessa e alla fase di lavoro giusta.",
+      },
+      {
+        title: "Supporto AI",
+        description:
+          "Grazie all'intelligenza artificiale il dipendente può inserire le attività svolte parlando con la nostra app nella sua lingua senza dover usare un'interfaccia complessa, basta la voce!",
+      },
+    ],
+  },
+  {
+    category: "Corsi di Formazione e Visite Mediche",
+    icon: "/images/funzionalita/CORSI-2.png",
+    features: [
+      {
+        title: "Gestione corsi di formazione",
+        description:
+          "La gestione dei corsi di formazione si occupa di organizzare e monitorare attività formative per migliorare le competenze dei dipendenti, ottimizzando il loro contributo professionale all'azienda.",
+      },
+      {
+        title: "Gestione delle Visite Mediche",
+        description:
+          "La gestione delle visite mediche sul lavoro riguarda l'organizzazione e il monitoraggio delle visite periodiche per garantire la salute e sicurezza dei dipendenti, rispettando le normative vigenti.",
+      },
+      {
+        title: "Notifica scadenze via mail",
+        description:
+          "Tutte le scadenze dei corsi e delle visite mediche vengono notificate via mail al responsabile della sede e il giorno prima di una visita o corso il dipendente riceve un promemoria con le info per raggiungere la location.",
+      },
+    ],
+  },
+  {
+    category: "Note Spese e Rimborsi",
+    icon: "/images/funzionalita/DOCUMENTI.png",
+    features: [
+      {
+        title: "Creazione semplice e veloce",
+        description:
+          "Inserita la categoria di spesa, l'importo e allegati gli scontrini o le ricevute, la nota spesa sarà creata e rimarrà in attesa fino ad approvazione.",
+      },
+      {
+        title: "Calcolo del rimborso chilometrico",
+        description:
+          "L'app calcola automaticamente i chilometri percorsi per i lavoratori fuori sede e compila in autonomia i rimborsi per le spese di viaggio.",
+      },
+      {
+        title: "Gestione per gruppi",
+        description:
+          "Delega il lavoro, senza perdere il controllo. Lascia che siano supervisori e capigruppo a visionare e approvare le note spese, in totale privacy e con permessi decisi da te.",
+      },
+    ],
+  },
+  {
+    category: "Comunicazioni con i Dipendenti",
+    icon: "/images/funzionalita/LUCCHETTO.png",
+    features: [
+      {
+        title: "Bacheca digitale ottimizzata",
+        description:
+          "Crea e invia in pochi istanti comunicazioni a tutti i tuoi dipendenti. Verifica la lettura dei messaggi tramite due livelli di controllo.",
+      },
+      {
+        title: "Condivisione dei documenti",
+        description:
+          "Consegna le attestazioni dei corsi, le certificazioni uniche e gli altri documenti di lavoro semplicemente caricandoli all'interno della scheda personale del dipendente.",
+      },
+    ],
+  },
+  {
+    category: "Gestione Accessi",
+    icon: "/images/funzionalita/GESTIONE-ACCESSI-2.png",
+    features: [
+      {
+        title: "Accessi personalizzati",
+        description:
+          "Ogni dipendente ha un accesso in linea con il suo ruolo aziendale. È possibile accedere con varie modalità: Badge, App, QR code e altre.",
+      },
+      {
+        title: "Uso dei macchinari",
+        description:
+          "Gestisci e monitora l'utilizzo dei macchinari aziendali, associandoli ai dipendenti autorizzati e tracciando l'effettivo impiego.",
+      },
+      {
+        title: "Gestione criteri temporanei",
+        description:
+          "Crea permessi temporanei di accesso per personale occasionale o visitatori, con controllo completo su durata e aree autorizzate.",
+      },
+      {
+        title: "Registrazione dei visitatori",
+        description:
+          "Elimina il foglio cartaceo dove registri i visitatori: il nostro sistema permette al visitatore di registrarsi in autonomia e ricevere via mail l'informativa privacy. Saprai sempre chi è in azienda, anche da remoto.",
+      },
+    ],
+  },
+  {
+    category: "Consulenti del Lavoro e Commercialista",
+    icon: "/images/funzionalita/CONSULENTE.png",
+    features: [
+      {
+        title: "Collegamento tra Azienda e Professionista",
+        description:
+          "Crea e invia in pochi istanti i dati mensili al tuo consulente per l'elaborazione delle buste paga. Esporta i dati in Excel per sede e per periodo.",
+      },
+      {
+        title: "Mai più ferie non godute",
+        description:
+          "Il Consulente avrà sempre i dati aggiornati evitando spiacevoli inconvenienti in merito a ferie e permessi non goduti.",
+      },
+    ],
+  },
+  {
+    category: "Sicurezza e Privacy",
+    icon: "/images/funzionalita/PRIVACY-2.png",
+    features: [
+      {
+        title: "Sicurezza dei dati",
+        description:
+          "Ogni giorno adottiamo misure di backup e sicurezza, per proteggere il tuo account dal rischio di attacchi malevoli e di perdita dei dati.",
+      },
+    ],
+  },
+];
+---
+
+<Layout
+  title="Funzionalità — Persone al Lavoro"
+  description="Scopri tutte le funzionalità di Persone al Lavoro: gestione presenze, commesse, cantieri, corsi di formazione, note spese, comunicazioni e accessi."
+>
+  <Header />
+
+  <main class="max-w-4xl mx-auto px-4 pt-28 mb-16">
+
+    <!-- Intro -->
+    <section class="mb-16 border-b border-gray-100">
+      <h1 class="text-4xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">Funzionalità</h1>
+      <p class="text-lg text-gray-500 mb-8">Tutti gli strumenti per gestire il tuo personale in un'unica piattaforma.</p>
+      <img
+        alt="Funzionalità della piattaforma Persone al Lavoro"
+        src={`${base}images/funzionalita/funzionalita.jpg`}
+        class="w-full rounded-xl aspect-video object-cover mb-8"
+      />
+    </section>
+
+    <!-- Feature sections -->
+    {sections.map((section, sectionIndex) => (
+      <section class={`mb-16 ${sectionIndex < sections.length - 1 ? "border-b border-gray-100" : ""}`}>
+
+        <!-- Section header with icon -->
+        <div class="flex items-center gap-4 mb-8">
+          <img
+            src={section.icon}
+            alt={section.category}
+            class="size-14 shrink-0 object-contain"
+          />
+          <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900">
+            {section.category}
+          </h2>
+        </div>
+
+        <!-- Feature cards grid -->
+        <div class={`grid grid-cols-1 gap-5 mb-8 ${section.features.length === 1 ? "" : "sm:grid-cols-2"}`}>
+          {section.features.map((feature) => (
+            <div class="group rounded-xl border border-gray-200 p-6 transition-all duration-200 hover:border-[#FF6600]/30 hover:shadow-md hover:shadow-[#FF6600]/5">
+              <h3 class="text-lg font-[Inter,sans-serif] font-semibold text-gray-900 mb-2 group-hover:text-[#FF6600] transition-colors">
+                {feature.title}
+              </h3>
+              <p class="text-base text-gray-600 leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+      </section>
+    ))}
+
+    <!-- CTA -->
+    <section class="mb-16">
+      <div class="rounded-xl bg-[#FF6600]/5 border border-[#FF6600]/20 p-8 sm:p-10 text-center">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Pronto a semplificare la gestione del personale?</h3>
+        <p class="text-gray-600 mb-6">Contattaci per una demo gratuita e scopri come PAL può trasformare i tuoi processi HR.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href={`${base}contatti/`}
+            class="inline-block rounded-xl bg-[#FF6600] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#e65c00] active:bg-[#cc5200] transition-colors"
+          >
+            Richiedi una demo gratuita
+          </a>
+          <a
+            href={`${base}cose-pal/`}
+            class="inline-block rounded-xl border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-700 hover:border-[#FF6600] hover:text-[#FF6600] transition-colors"
+          >
+            Scopri cos'è PAL
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

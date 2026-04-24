@@ -1,0 +1,138 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="Multilingue — Persone al Lavoro"
+  description="La nostra APP, grazie all'Intelligenza Artificiale, è in grado di identificare le attività svolte e gli orari di lavoro da un semplice messaggio vocale, in qualsiasi lingua."
+>
+  <Header />
+
+  <main class="max-w-4xl mx-auto px-4 pt-28 mb-16">
+
+    <!-- Intro -->
+    <section class="mb-16 border-b border-gray-100">
+      <h1 class="text-4xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">Multilingue</h1>
+      <p class="text-lg text-gray-500 mb-8">La lingua non è più un problema!</p>
+      <img
+        alt="App vocale multilingue PAL"
+        src={`${base}images/multilingue/app-vocale.png`}
+        class="w-full rounded-xl object-cover mb-8"
+      />
+      <p class="text-lg text-gray-600 leading-relaxed mb-8">
+        La nostra APP, grazie all'Intelligenza Artificiale, è in grado di identificare le attività svolte e gli orari di lavoro da un semplice messaggio vocale, in qualsiasi lingua.
+      </p>
+      <p class="text-lg text-gray-600 leading-relaxed mb-8">
+        Semplifica la comunicazione, risparmia tempo e aumenta la produttività. Inizia a usarlo oggi stesso e scopri un nuovo modo di lavorare!
+      </p>
+    </section>
+
+    <!-- Il lavoratore parla -->
+    <section class="mb-16 border-b border-gray-100">
+      <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">
+        Il lavoratore parla, <span class="text-[#FF6600]">l'APP fa il resto</span>
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed mb-8">
+        Il dipendente registra un semplice messaggio vocale nella propria lingua madre, descrivendo le attività svolte e il tempo impiegato. L'APP traduce ed inserisce i dati nel gestionale.
+      </p>
+    </section>
+
+    <!-- Stop a perdite di tempo -->
+    <section class="mb-16 border-b border-gray-100">
+      <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">
+        Stop a perdite di tempo e <span class="text-[#FF6600]">incomprensioni</span>
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed mb-8">
+        Il responsabile può consultare in tempo reale, ovunque esso sia. Senza bisogno di recuperare fogli e documenti cartacei.
+      </p>
+      <img
+        alt="Gestione attività in tempo reale"
+        src={`${base}images/multilingue/image1.png`}
+        class="w-full rounded-xl object-cover mb-8"
+      />
+    </section>
+
+    <!-- Vantaggi -->
+    <section class="mb-16 border-b border-gray-100">
+      <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900 mb-8">
+        I vantaggi della funzione multilingue
+      </h2>
+      <dl class="grid grid-cols-1 gap-8 text-base/7 text-gray-600 sm:grid-cols-2 mb-8">
+        <div class="relative pl-9">
+          <dt class="inline font-semibold text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-[#FF6600]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
+            </svg>
+            Elimina le barriere linguistiche.
+          </dt>{" "}
+          <dd class="inline">Lavoratori e responsabili possono concentrarsi sul lavoro, non sulla traduzione.</dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="inline font-semibold text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-[#FF6600]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+            Precisione senza sforzo.
+          </dt>{" "}
+          <dd class="inline">Tutto è registrato e tradotto in tempo reale, senza perdita di dettagli.</dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="inline font-semibold text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-[#FF6600]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
+            </svg>
+            Gestione intelligente.
+          </dt>{" "}
+          <dd class="inline">I responsabili hanno sempre sotto controllo le attività, con dati disponibili ovunque e in qualsiasi momento.</dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="inline font-semibold text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-[#FF6600]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+            </svg>
+            Perfetta per team internazionali.
+          </dt>{" "}
+          <dd class="inline">Supporta un'ampia gamma di lingue, rendendo il tuo team più unito ed efficiente.</dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="inline font-semibold text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-[#FF6600]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
+            </svg>
+            Facile da usare.
+          </dt>{" "}
+          <dd class="inline">L'interfaccia intuitiva rende il sistema accessibile anche a chi non è pratico di tecnologia.</dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="inline font-semibold text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-[#FF6600]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+            Traccia attività in tempo reale.
+          </dt>{" "}
+          <dd class="inline">Monitora in ogni momento chi ha fatto cosa e quanto tempo ha impiegato, per una gestione ancora più precisa ed efficiente.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- CTA -->
+    <section class="mb-16">
+      <div class="rounded-xl bg-[#FF6600]/5 border border-[#FF6600]/20 p-8 sm:p-10 text-center">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Scopri la potenza del multilingue</h3>
+        <p class="text-gray-600 mb-6">Contattaci per una demo gratuita e vedi come l'AI semplifica la comunicazione nel tuo team.</p>
+        <a
+          href={`${base}contatti/`}
+          class="inline-block rounded-xl bg-[#FF6600] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#e65c00] active:bg-[#cc5200] transition-colors"
+        >
+          Richiedi una demo
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

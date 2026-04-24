@@ -1,0 +1,112 @@
+---
+const base = import.meta.env.BASE_URL;
+
+interface NavItem {
+  name: string;
+  href: string;
+}
+
+const navigation: NavItem[] = [
+  { name: "Cos'è PAL", href: `${base}cose-pal/` },
+  { name: "Badge di cantiere", href: `${base}badge-cantiere/` },
+  { name: "Funzionalità", href: `${base}funzionalita/` },
+  { name: "Multilingue", href: `${base}multilingue/` },
+  { name: "Sicurezza Artificiale", href: `${base}sicurezza-ia/` },
+  { name: "App", href: `${base}app/` },
+  { name: "Contatti", href: `${base}contatti/` },
+];
+---
+
+<header class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/60">
+  <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
+    <div class="flex lg:flex-1">
+      <a href={base} class="-m-1.5 p-1.5">
+        <span class="sr-only">Persone al Lavoro</span>
+        <img
+          src={`${base}ppl_logo.png`}
+          alt="Persone al Lavoro"
+          class="h-14 w-auto sm:h-20"
+        />
+      </a>
+    </div>
+
+    <!-- Mobile menu button -->
+    <div class="flex lg:hidden">
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        class="-m-2.5 inline-flex items-center justify-center rounded-xl p-2.5 text-gray-700 cursor-pointer"
+        aria-label="Apri menu"
+      >
+        <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Desktop nav (right-aligned) -->
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-6 xl:gap-x-8">
+      {navigation.map(({ name, href }) => (
+        <a href={href} class="text-sm/6 font-semibold text-gray-900 hover:text-[#FF6600] active:text-[#e65c00] transition-colors whitespace-nowrap">
+          {name}
+        </a>
+      ))}
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile menu panel (outside header so fixed positioning works) -->
+<div id="mobile-menu" class="hidden lg:hidden">
+  <div class="fixed inset-0 z-[60] bg-black/20 backdrop-blur-sm cursor-pointer" id="mobile-menu-overlay"></div>
+  <div class="fixed inset-y-0 right-0 z-[70] w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+    <div class="flex items-center justify-between">
+      <a href={base} class="-m-1.5 p-1.5">
+        <span class="sr-only">Persone al Lavoro</span>
+        <img src={`${base}ppl_logo.png`} alt="Persone al Lavoro" class="h-10 w-auto" />
+      </a>
+      <button
+        id="mobile-menu-close"
+        type="button"
+        class="-m-2.5 rounded-xl p-2.5 text-gray-700 cursor-pointer"
+        aria-label="Chiudi menu"
+      >
+        <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="mt-6 flow-root">
+      <div class="-my-6 divide-y divide-gray-500/10">
+        <div class="space-y-2 py-6">
+          {navigation.map(({ name, href }) => (
+            <a
+              href={href}
+              class="-mx-3 block rounded-xl px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 hover:text-[#FF6600] active:text-[#e65c00] cursor-pointer"
+            >
+              {name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const closeBtn = document.getElementById("mobile-menu-close");
+  const overlay = document.getElementById("mobile-menu-overlay");
+
+  function openMenu() {
+    menu?.classList.remove("hidden");
+  }
+
+  function closeMenu() {
+    menu?.classList.add("hidden");
+  }
+
+  btn?.addEventListener("click", openMenu);
+  closeBtn?.addEventListener("click", closeMenu);
+  overlay?.addEventListener("click", closeMenu);
+</script>

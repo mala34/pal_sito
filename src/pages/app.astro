@@ -1,0 +1,99 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="App — Persone al Lavoro"
+  description="L'app PAL per la gestione delle presenze, commesse, DPI, sicurezza artificiale e controllo accessi. Disponibile su Google Play e App Store."
+>
+  <Header />
+
+  <main class="max-w-4xl mx-auto px-4 pt-28 mb-16">
+
+    <!-- Intro -->
+    <section class="mb-16 border-b border-gray-100">
+      <h1 class="text-4xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">La nostra App</h1>
+      <p class="text-lg text-gray-500 mb-8">Tutto il potere di PAL nel palmo della tua mano.</p>
+    </section>
+
+    <!-- Hero -->
+    <section class="mb-16 border-b border-gray-100">
+      <div class="flex flex-col md:flex-row items-center gap-10 py-12">
+        <!-- Testo a sinistra -->
+        <div class="flex-1">
+          <div class="flex mb-6">
+            <div class="relative flex items-center gap-x-4 rounded-full bg-white px-4 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10">
+              <span class="font-semibold text-[#FF6600]">Disponibile ora</span>
+              <span aria-hidden="true" class="h-4 w-px bg-gray-900/10"></span>
+              <span>Google Play & App Store</span>
+            </div>
+          </div>
+          <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">
+            Gestisci il tuo personale <br/> <span class="text-[#FF6600]">ovunque tu sia</span>
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            Presenze, commesse, DPI, sicurezza e controllo accessi: tutto in un'unica app. Con intelligenza artificiale integrata e supporto vocale multilingue.
+          </p>
+          <div class="flex items-center gap-x-4">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.lapsy.personeallavoro&pli=1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img alt="Scarica su Google Play" src={`${base}images/app/google-play.png`} class="h-10 object-contain" />
+            </a>
+            <a
+              href="https://apps.apple.com/us/app/pal/id6744063982"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img alt="Scarica su App Store" src={`${base}images/app/app-store.png`} class="h-10 object-contain" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Screenshot app a destra -->
+        <div class="shrink-0">
+          <img
+            alt="Screenshot app PAL"
+            src={`${base}images/app/app-screenshot.png`}
+            class="w-sm sm:sm  object-contain"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Scopri le tecnologie integrate -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900 mb-6">
+        Scopri le tecnologie integrate
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <a href={`${base}sicurezza-ia/`} class="group rounded-xl border border-gray-200 p-6 transition-all duration-200 hover:border-[#FF6600]/30 hover:shadow-md hover:shadow-[#FF6600]/5">
+          <img
+            alt="Logo Sicurezza Artificiale"
+            src={`${base}images/sicurezza-ia/LOGO-SICUREZZA-AI.png`}
+            class="h-12 object-contain mb-4"
+          />
+          <h3 class="text-lg font-[Inter,sans-serif] font-semibold text-gray-900 mb-2 group-hover:text-[#FF6600] transition-colors">Il nuovo sistema di sicurezza</h3>
+          <p class="text-base text-gray-600 leading-relaxed">Elabora le immagini ricevute dal posto di lavoro e identifica i potenziali rischi notificandoli via mail al responsabile della sicurezza.</p>
+        </a>
+        <a href={`${base}multilingue/`} class="group rounded-xl border border-gray-200 p-6 transition-all duration-200 hover:border-[#FF6600]/30 hover:shadow-md hover:shadow-[#FF6600]/5">
+          <div class="flex items-center justify-center size-12 rounded-xl bg-[#FF6600]/10 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-[#FF6600]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-[Inter,sans-serif] font-semibold text-gray-900 mb-2 group-hover:text-[#FF6600] transition-colors">Innovativo sistema multilingue</h3>
+          <p class="text-base text-gray-600 leading-relaxed">Semplifica la comunicazione, risparmia tempo e aumenta la produttività. Inizia a usarlo oggi stesso e scopri un nuovo modo di lavorare!</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

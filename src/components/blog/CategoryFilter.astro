@@ -1,0 +1,70 @@
+---
+interface Props {
+  categories: Record<string, string>;
+  basePath: string;
+}
+
+const { categories } = Astro.props;
+---
+
+<nav class="flex flex-wrap gap-2 mb-8" aria-label="Filtri categoria" data-category-filter>
+  <button
+    type="button"
+    data-filter=""
+    class="inline-block px-4 py-1.5 text-sm font-medium rounded-full border transition-colors bg-[#7cc68d] text-white border-[#7cc68d]"
+  >
+    Tutti
+  </button>
+  {Object.entries(categories).map(([slug, label]) => (
+    <button
+      type="button"
+      data-filter={slug}
+      class="inline-block px-4 py-1.5 text-sm font-medium rounded-full border transition-colors bg-white text-gray-600 border-gray-300 hover:border-[#7cc68d] hover:text-[#7cc68d]"
+    >
+      {label}
+    </button>
+  ))}
+</nav>
+
+<script>
+  const nav = document.querySelector("[data-category-filter]");
+  const buttons = nav?.querySelectorAll("button[data-filter]");
+  const cards = document.querySelectorAll("[data-post-card]");
+
+  const activeClass = "bg-[#7cc68d] text-white border-[#7cc68d]";
+  const inactiveClass = "bg-white text-gray-600 border-gray-300 hover:border-[#7cc68d] hover:text-[#7cc68d]";
+
+  function activateFilter(filter: string) {
+    // Update button styles
+    buttons?.forEach((b) => {
+      b.className = `inline-block px-4 py-1.5 text-sm font-medium rounded-full border transition-colors ${inactiveClass}`;
+    });
+    const activeBtn = nav?.querySelector(`button[data-filter="${filter}"]`);
+    if (activeBtn) {
+      activeBtn.className = `inline-block px-4 py-1.5 text-sm font-medium rounded-full border transition-colors ${activeClass}`;
+    }
+
+    // Filter cards
+    cards.forEach((card) => {
+      const el = card as HTMLElement;
+      const cat = el.dataset.categoria;
+      const matchesCat = !filter || cat === filter;
+      const hiddenBySearch = el.dataset.hiddenBySearch === "true";
+      el.dataset.hiddenByCategory = matchesCat ? "false" : "true";
+      el.style.display = matchesCat && !hiddenBySearch ? "" : "none";
+    });
+  }
+
+  buttons?.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = (btn as HTMLElement).dataset.filter ?? "";
+      activateFilter(filter);
+    });
+  });
+
+  // Apply filter from URL ?cat= parameter
+  const urlCat = new URLSearchParams(window.location.search).get("cat");
+  if (urlCat) {
+    activateFilter(urlCat);
+  }
+</script>
