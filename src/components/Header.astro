@@ -45,12 +45,15 @@ const navigation: NavItem[] = [
     </div>
 
     <!-- Desktop nav (right-aligned) -->
-    <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-6 xl:gap-x-8">
+    <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-6 xl:gap-x-8">
       {navigation.map(({ name, href }) => (
         <a href={href} class="text-sm/6 font-semibold text-gray-900 hover:text-[#FF6600] active:text-[#e65c00] transition-colors whitespace-nowrap">
           {name}
         </a>
       ))}
+      <a href="https://app.personeallavoro.it/login" class="rounded-xl bg-[#FF6600] px-4 py-2 text-sm font-semibold text-white hover:bg-[#e65c00] transition-colors whitespace-nowrap">
+        Login
+      </a>
     </div>
   </nav>
 </header>
@@ -86,6 +89,14 @@ const navigation: NavItem[] = [
               {name}
             </a>
           ))}
+        </div>
+        <div class="py-6">
+          <a
+            href="https://app.personeallavoro.it/login"
+            class="block rounded-xl bg-[#FF6600] px-3 py-2.5 text-center text-base font-semibold text-white hover:bg-[#e65c00] transition-colors"
+          >
+            Login
+          </a>
         </div>
       </div>
     </div>
