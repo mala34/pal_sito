@@ -1,0 +1,25 @@
+# Return 410 Gone for old WordPress URLs
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Old WordPress feed URLs
+  RewriteCond %{QUERY_STRING} ^feed= [NC]
+  RewriteRule ^(.*)$ - [G,L]
+
+  # Old WordPress post/page URLs
+  RewriteCond %{QUERY_STRING} ^p= [NC]
+  RewriteRule ^(.*)$ - [G,L]
+
+  RewriteCond %{QUERY_STRING} ^page_id= [NC]
+  RewriteRule ^(.*)$ - [G,L]
+
+  # Old WordPress category/tag/author URLs
+  RewriteCond %{QUERY_STRING} ^cat= [NC]
+  RewriteRule ^(.*)$ - [G,L]
+
+  RewriteCond %{QUERY_STRING} ^tag= [NC]
+  RewriteRule ^(.*)$ - [G,L]
+
+  RewriteCond %{QUERY_STRING} ^author= [NC]
+  RewriteRule ^(.*)$ - [G,L]
+</IfModule>

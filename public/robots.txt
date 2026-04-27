@@ -12,5 +12,11 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /*?feed=*
+Disallow: /*?p=*
+Disallow: /*?page_id=*
+Disallow: /*?cat=*
+Disallow: /*?tag=*
+Disallow: /*?author=*
 
 Sitemap: https://personeallavoro.it/sitemap-index.xml
