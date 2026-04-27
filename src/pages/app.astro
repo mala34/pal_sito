@@ -35,7 +35,8 @@ const base = import.meta.env.BASE_URL;
             Gestisci il tuo personale <br/> <span class="text-[#FF6600]">ovunque tu sia</span>
           </h2>
           <p class="text-lg text-gray-600 leading-relaxed mb-6">
-            Presenze, commesse, DPI, sicurezza e controllo accessi: tutto in un'unica app. Con intelligenza artificiale integrata e supporto vocale multilingue.
+            Presenze, commesse, DPI, sicurezza e controllo accessi: tutto in un'unica app. Con intelligenza artificiale integrata e <a href={`${base}multilingue/`} class="text-[#FF6600] font-medium hover:underline">supporto vocale multilingue</a>.
+            Scopri <a href={`${base}cose-pal/`} class="text-[#FF6600] font-medium hover:underline">cos'è PAL</a> e come può aiutare la tua azienda.
           </p>
           <div class="flex items-center gap-x-4">
             <a
@@ -43,14 +44,14 @@ const base = import.meta.env.BASE_URL;
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img alt="Scarica su Google Play" src={`${base}images/app/google-play.png`} class="h-10 object-contain" />
+              <img alt="Scarica su Google Play" src={`${base}images/app/google-play.png`} width="135" height="40" loading="lazy" class="h-10 object-contain" />
             </a>
             <a
               href="https://apps.apple.com/us/app/pal/id6744063982"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img alt="Scarica su App Store" src={`${base}images/app/app-store.png`} class="h-10 object-contain" />
+              <img alt="Scarica su App Store" src={`${base}images/app/app-store.png`} width="120" height="40" loading="lazy" class="h-10 object-contain" />
             </a>
           </div>
         </div>
@@ -60,6 +61,9 @@ const base = import.meta.env.BASE_URL;
           <img
             alt="Screenshot app PAL"
             src={`${base}images/app/app-screenshot.png`}
+            width="400"
+            height="800"
+            loading="lazy"
             class="w-sm sm:sm  object-contain"
           />
         </div>
@@ -76,6 +80,9 @@ const base = import.meta.env.BASE_URL;
           <img
             alt="Logo Sicurezza Artificiale"
             src={`${base}images/sicurezza-ia/LOGO-SICUREZZA-AI.png`}
+            width="200"
+            height="48"
+            loading="lazy"
             class="h-12 object-contain mb-4"
           />
           <h3 class="text-lg font-[Inter,sans-serif] font-semibold text-gray-900 mb-2 group-hover:text-[#FF6600] transition-colors">Il nuovo sistema di sicurezza</h3>

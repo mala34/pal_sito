@@ -1,1 +1,1 @@
-{"name":"Persone al Lavoro","short_name":"PAL","icons":[{"src":"/ppl_logo.png","sizes":"192x192","type":"image/png"}],"theme_color":"#7cc68d","background_color":"#ffffff","display":"standalone"}
+{"name":"Persone al Lavoro","short_name":"PAL","icons":[{"src":"/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],"theme_color":"#FF6600","background_color":"#ffffff","display":"standalone"}

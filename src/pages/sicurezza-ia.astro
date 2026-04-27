@@ -20,10 +20,18 @@ const base = import.meta.env.BASE_URL;
       <img
         alt="Sicurezza Artificiale in cantiere"
         src={`${base}images/sicurezza-ia/sicurezza-ai.jpg`}
+        width="800"
+        height="450"
+        loading="lazy"
         class="w-full rounded-xl aspect-video object-cover mb-8"
       />
-      <p class="text-lg text-gray-600 leading-relaxed mb-8">
+      <p class="text-lg text-gray-600 leading-relaxed mb-6">
         SICUREZZA ARTIFICIALE offre un innovativo sistema di gestione della sicurezza basato sull'AI per il settore edile italiano. Il nostro servizio affianca il tuo addetto della sicurezza sul posto di lavoro offrendogli un sistema di monitoraggio anche quando non è presente in cantiere.
+      </p>
+      <p class="text-lg text-gray-600 leading-relaxed mb-8">
+        Il sistema si integra con il <a href={`${base}badge-cantiere/`} class="text-[#FF6600] font-medium hover:underline">badge digitale di cantiere</a>
+        e con la <a href={`${base}app/`} class="text-[#FF6600] font-medium hover:underline">nostra app mobile</a>
+        per offrire un ecosistema completo di <a href={`${base}funzionalita/`} class="text-[#FF6600] font-medium hover:underline">gestione del personale</a>.
       </p>
     </section>
 
@@ -38,6 +46,9 @@ const base = import.meta.env.BASE_URL;
       <img
         alt="Logo Sicurezza Artificiale"
         src={`${base}images/sicurezza-ia/LOGO-SICUREZZA-AI.png`}
+        width="699"
+        height="354"
+        loading="lazy"
         class="max-w-md mx-auto object-contain mb-8"
       />
     </section>

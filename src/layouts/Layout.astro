@@ -12,7 +12,7 @@ const base = import.meta.env.BASE_URL;
 const {
 	title = 'Persone al Lavoro — Gestione del personale',
 	description = 'Persone al Lavoro (PAL): piattaforma web per la gestione del personale, presenze, accessi in cantiere e formazione. By Lapsy S.r.l.',
-	image = `${base}ppl_logo.png`
+	image = `${base}ogImage.png`
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -25,19 +25,27 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!-- Favicon -->
-		<link rel="icon" type="image/png" href={`${base}ppl_logo.png`} />
-		<link rel="icon" type="image/png" href={`${base}ppl_logo.png`} sizes="192x192" />
-		<link rel="apple-touch-icon" href={`${base}ppl_logo.png`} />
-		<meta name="msapplication-TileImage" content={`${base}ppl_logo.png`} />
+		<link rel="icon" href={`${base}favicon.ico`} sizes="32x32" />
+		<link rel="icon" type="image/png" href={`${base}favicon-32x32.png`} sizes="32x32" />
+		<link rel="icon" type="image/png" href={`${base}favicon-16x16.png`} sizes="16x16" />
+		<link rel="apple-touch-icon" sizes="180x180" href={`${base}apple-touch-icon.png`} />
+		<link rel="manifest" href={`${base}site.webmanifest`} />
+		<meta name="msapplication-TileImage" content={`${base}android-chrome-192x192.png`} />
+		<meta name="msapplication-TileColor" content="#FF6600" />
+		<meta name="theme-color" content="#FF6600" />
 
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&display=swap" rel="stylesheet" />
 
+		<!-- Google Search Console verification -->
+		<meta name="google-site-verification" content="1vz5m45GlJH15_7hhnlNUA1FWd4C84dIqjt7czcy-zY" />
+
 		<!-- SEO -->
 		<link rel="canonical" href={canonicalURL} />
 		<meta name="description" content={description} />
+		<meta name="robots" content="max-image-preview:large" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 
@@ -47,6 +55,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={new URL(image, Astro.site)} />
+		<meta property="og:image:width" content="1424" />
+		<meta property="og:image:height" content="752" />
 		<meta property="og:locale" content="it_IT" />
 		<meta property="og:site_name" content="Persone al Lavoro" />
 
@@ -55,6 +65,100 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={new URL(image, Astro.site)} />
+
+		<!-- Structured Data (Schema.org) -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "Organization",
+					"@id": "https://personeallavoro.it/#organization",
+					"name": "Persone al Lavoro",
+					"alternateName": ["PAL", "Persone al lavoro"],
+					"url": "https://personeallavoro.it/",
+					"logo": {
+						"@type": "ImageObject",
+						"url": "https://personeallavoro.it/ppl_logo.png",
+						"@id": "https://personeallavoro.it/#organizationLogo"
+					},
+					"image": { "@id": "https://personeallavoro.it/#organizationLogo" },
+					"parentOrganization": {
+						"@type": "Organization",
+						"name": "Lapsy S.r.l.",
+						"taxID": "IT03447571203",
+						"email": "info@lapsy.me",
+						"telephone": "+393480407500",
+						"address": [
+							{
+								"@type": "PostalAddress",
+								"streetAddress": "Via P.A. Orlandi, 11/1/B",
+								"addressLocality": "Bologna",
+								"postalCode": "40139",
+								"addressCountry": "IT",
+								"name": "Sede Legale"
+							},
+							{
+								"@type": "PostalAddress",
+								"streetAddress": "Piazza Sergio Finocchi, 3",
+								"addressLocality": "Spilamberto",
+								"addressRegion": "MO",
+								"postalCode": "41017",
+								"addressCountry": "IT",
+								"name": "Sede Operativa"
+							}
+						]
+					},
+					"contactPoint": {
+						"@type": "ContactPoint",
+						"telephone": "+393480407500",
+						"email": "info@lapsy.me",
+						"contactType": "customer service",
+						"availableLanguage": ["Italian"]
+					}
+				},
+				{
+					"@type": "SoftwareApplication",
+					"name": "Persone al Lavoro",
+					"alternateName": ["PAL"],
+					"applicationCategory": "BusinessApplication",
+					"applicationSubCategory": "Gestione del personale e presenze",
+					"operatingSystem": "Web",
+					"url": "https://personeallavoro.it/",
+					"description": description,
+					"offers": {
+						"@type": "Offer",
+						"availability": "https://schema.org/OnlineOnly"
+					},
+					"keywords": [
+						"gestione personale",
+						"presenze cantiere",
+						"badge cantiere",
+						"gestione presenze",
+						"software HR",
+						"multilingue AI",
+						"sicurezza cantiere"
+					],
+					"provider": { "@id": "https://personeallavoro.it/#organization" }
+				},
+				{
+					"@type": "WebSite",
+					"@id": "https://personeallavoro.it/#website",
+					"url": "https://personeallavoro.it/",
+					"name": "Persone al Lavoro",
+					"inLanguage": "it-IT",
+					"publisher": { "@id": "https://personeallavoro.it/#organization" }
+				},
+				{
+					"@type": "WebPage",
+					"@id": `${canonicalURL}#webpage`,
+					"url": canonicalURL.toString(),
+					"name": title,
+					"description": description,
+					"inLanguage": "it-IT",
+					"isPartOf": { "@id": "https://personeallavoro.it/#website" }
+				}
+			]
+		})} />
 	</head>
 	<body class="min-h-screen bg-white text-gray-900 antialiased font-[Inter,sans-serif]">
 		<slot />

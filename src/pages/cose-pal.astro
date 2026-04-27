@@ -20,6 +20,9 @@ const base = import.meta.env.BASE_URL;
       <img
         alt="Ingegnere in cantiere con tablet"
         src={`${base}images/cose-pal/slide-1-badge.png`}
+        width="800"
+        height="450"
+        loading="lazy"
         class="w-full rounded-xl object-contain mb-8"
       />
       <p class="text-lg text-gray-600 leading-relaxed">
@@ -39,11 +42,17 @@ const base = import.meta.env.BASE_URL;
         <img
           alt="Gestione HR"
           src={`${base}images/cose-pal/gestione-hr.jpg`}
+          width="600"
+          height="450"
+          loading="lazy"
           class="w-full rounded-xl object-cover aspect-4/3"
         />
         <img
           alt="Dati in cloud"
           src={`${base}images/cose-pal/cloud.jpg`}
+          width="600"
+          height="450"
+          loading="lazy"
           class="w-full rounded-xl object-cover aspect-4/3"
         />
       </div>
@@ -60,6 +69,9 @@ const base = import.meta.env.BASE_URL;
       <img
         alt="Team al lavoro"
         src={`${base}images/cose-pal/team.jpg`}
+        width="800"
+        height="450"
+        loading="lazy"
         class="w-full rounded-xl aspect-video object-cover"
       />
     </section>
@@ -69,8 +81,13 @@ const base = import.meta.env.BASE_URL;
       <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">
         Un'unica piattaforma per tutto
       </h2>
-      <p class="text-lg text-gray-600 leading-relaxed">
+      <p class="text-lg text-gray-600 leading-relaxed mb-6">
         Gestisci le presenze, il controllo accessi, i corsi della sicurezza, le commesse e i DPI o attrezzature in carico ai tuoi dipendenti tutto da un'unica piattaforma.
+      </p>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        Scopri tutte le <a href={`${base}funzionalita/`} class="text-[#FF6600] font-medium hover:underline">funzionalità della piattaforma</a>,
+        il nostro <a href={`${base}badge-cantiere/`} class="text-[#FF6600] font-medium hover:underline">badge digitale di cantiere</a>
+        e il sistema <a href={`${base}multilingue/`} class="text-[#FF6600] font-medium hover:underline">multilingue con intelligenza artificiale</a>.
       </p>
     </section>
 

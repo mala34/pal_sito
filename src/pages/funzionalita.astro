@@ -193,10 +193,18 @@ features: [
     <!-- Intro -->
     <section class="mb-16 border-b border-gray-100">
       <h1 class="text-4xl font-[Inter,sans-serif] font-bold text-gray-900 mb-4">Funzionalità</h1>
-      <p class="text-lg text-gray-500 mb-8">Tutti gli strumenti per gestire il tuo personale in un'unica piattaforma.</p>
+      <p class="text-lg text-gray-500 mb-8">
+        Tutti gli strumenti per gestire il tuo personale in un'unica piattaforma.
+        Dalla <a href={`${base}badge-cantiere/`} class="text-[#FF6600] font-medium hover:underline">gestione badge di cantiere</a>
+        al sistema <a href={`${base}multilingue/`} class="text-[#FF6600] font-medium hover:underline">multilingue AI</a>,
+        fino alla <a href={`${base}sicurezza-ia/`} class="text-[#FF6600] font-medium hover:underline">sicurezza artificiale</a>.
+      </p>
       <img
         alt="Funzionalità della piattaforma Persone al Lavoro"
         src={`${base}images/funzionalita/funzionalita.jpg`}
+        width="800"
+        height="450"
+        loading="lazy"
         class="w-full rounded-xl aspect-video object-cover mb-8"
       />
     </section>
@@ -210,6 +218,9 @@ features: [
           <img
             src={section.icon}
             alt={section.category}
+            width="56"
+            height="56"
+            loading="lazy"
             class="size-14 shrink-0 object-contain"
           />
           <h2 class="text-2xl font-[Inter,sans-serif] font-bold text-gray-900">
